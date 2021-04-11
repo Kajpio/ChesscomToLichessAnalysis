@@ -1,11 +1,15 @@
-function paste(png){
-    var button = document.createElement("button");
-    button.innerHTML = png.s;
+function paste(png) {
 
-    // 2. Append somewhere
-    var body = document.getElementsByTagName("body")[0];
-    body.appendChild(button);
+    var textArea = document.getElementById("form3-pgn");
+    textArea.value = png
+
+    var button = document.getElementsByClassName("form-control cmn-toggle")[0];
+    button.click()
+
+    var submitButton = document.getElementsByClassName("submit button text")[0];
+    submitButton.click();
+    console.log(button)
+
 }
 
 browser.runtime.onMessage.addListener(paste);
-
